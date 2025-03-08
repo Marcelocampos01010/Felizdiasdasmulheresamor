@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia das Mulheres - Para o Amor da Minha Vida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffccf2; /* Fundo rosa claro */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #cc0066; /* Rosa escuro */
+            margin-top: 20px;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            background-color: rgba(204, 0, 102, 0.5); /* Rosa escuro com transparência */
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+        }
+
+        .left-arrow {
+            left: 10px;
+        }
+
+        .right-arrow {
+            right: 10px;
+        }
+
+        #heart-container {
+            display: none;
+            text-align: center;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+        }
+
+        #heart {
+            font-size: 3rem;
+            color: #cc0066; /* Rosa escuro */
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        #click-here {
+            font-size: 1rem;
+            color: #cc0066; /* Rosa escuro */
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        #message {
+            font-size: 1.5rem;
+            color: #cc0066; /* Rosa escuro */
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            word-wrap: break-word;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2rem;
+            color: #ff66b3; /* Rosa claro */
+            opacity: 0.8;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-30px) scale(1.2);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            #message {
+                font-size: 1.2rem;
+                padding: 15px;
+            }
+
+            #heart {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Uma homenagem à mulher que eu mais amo nesse mundo</h1>
+    
+    <!-- Container de imagens -->
+    <div class="container">
+        <div class="image-container" id="image1">
+            <img src="IMG-20250131-WA0053.jpg" alt="Foto 1">
+        </div>
+        <div class="image-container" id="image2">
+            <img src="IMG-20250206-WA0019.jpg" alt="Foto 2">
+        </div>
+        <div class="image-container" id="image3">
+            <img src="IMG-20250301-WA0037.jpg" alt="Foto 3">
+        </div>
+
+        <!-- Setas -->
+        <button class="arrow left-arrow" id="leftArrow">&#8592;</button>
+        <button class="arrow right-arrow" id="rightArrow">&#8594;</button>
+        
+        <!-- Coração clicável -->
+        <div id="heart-container">
+            <div id="heart">&#10084;</div>
+            <div id="click-here">Clique aqui</div>
+        </div>
+
+        <!-- Mensagem -->
+        <div id="message">Só quero que você saiba que você é a mulher mais linda, mais fofa e mais encantadora desse mundo, você me faz tão bem, obrigado por estar comigo, te amo muito e um feliz dia das mulheres para você 💞</div>
+    </div>
+
+    <!-- Corações flutuantes -->
+    <div class="heart" style="top: 10%; left: 10%; animation-delay: 0s;">&#10084;</div>
+    <div class="heart" style="top: 20%; left: 30%; animation-delay: 1s;">&#10084;</div>
+    <div class="heart" style="top: 50%; left: 50%; animation-delay: 2s;">&#10084;</div>
+    <div class="heart" style="top: 70%; left: 70%; animation-delay: 3s;">&#10084;</div>
+    <div class="heart" style="top: 40%; left: 80%; animation-delay: 4s;">&#10084;</div>
+
+    <script>
+        const images = document.querySelectorAll('.image-container');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        function showHeart() {
+            if (currentIndex === images.length - 1) {
+                document.getElementById('heart-container').style.display = 'block';
+            } else {
+                document.getElementById('heart-container').style.display = 'none';
+            }
+        }
+
+        function revealMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+
+        document.getElementById('leftArrow').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showImage(currentIndex);
+                showHeart();
+            }
+        });
+
+        document.getElementById('rightArrow').addEventListener('click', () => {
+            if (currentIndex < images.length - 1) {
+                currentIndex++;
+                showImage(currentIndex);
+                showHeart();
+            }
+        });
+
+        showImage(currentIndex);
+        showHeart();
+
+        document.getElementById('heart').addEventListener('click', revealMessage);
+    </script>
+
+</body>
+</html>
